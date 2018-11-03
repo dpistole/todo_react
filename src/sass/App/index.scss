@@ -1,10 +1,14 @@
 .app {
+    position: relative;
+    overflow: auto;
     height: 100%;
+
     display: flex;
     align-items: flex-start;
     justify-content: center;
     background: $black;
     color: $white;
+    padding: 50px 0;
 
     .container {
       width: 400px;
@@ -12,53 +16,20 @@
       background: $dark-gray;
 
       .title {
-        padding: 5px 15px;
+        font-size: 36px;
+        font-weight: bold;
+        padding: 15px 15px;
       }
 
       .controls {
-        padding: 15px;
-      }
-
-      .to-do-list {
+        padding: 15px 15px;
         display: flex;
-        flex-direction: column;
-      
-        .to-do-item {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          background: $gray;
-
-          height: 50px;
-          border-bottom: solid $white thin;
-          border-collapse: collapse;
-
-          &:first-child {
-            border-top: solid $white thin;
-          }
-
-          .note {
-            flex: 1 0 auto;
-            padding: 0 15px;
-          }
-
-          .checkbox {
-            flex: 0 1 initial;
-            padding: 0 15px;
-            
-            input {
-              cursor: pointer;
-            }
-          }
+        justify-content: flex-end;
+    
+        button {
+          cursor: pointer;
         }
       }
-
-      .footer {
-        padding: 15px;
-        text-align: right;
-      }
-
 
     }
 }

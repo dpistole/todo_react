@@ -1,0 +1,28 @@
+.to-do-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $gray;
+  height: 50px;
+  border-bottom: solid $white thin;
+  border-collapse: collapse;
+  cursor: pointer;
+
+  &:first-child {
+    border-top: solid $white thin;
+  }
+
+  .note {
+    flex: 1 0 auto;
+    padding: 0 15px;
+  }
+
+  .checkbox {
+    flex: 0 1 initial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    height: 100%;
+  }
+}

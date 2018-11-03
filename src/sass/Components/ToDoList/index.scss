@@ -1,0 +1,9 @@
+.to-do-list {
+  display: flex;
+  flex-direction: column;
+
+  .footer {
+    padding: 15px;
+    text-align: right;
+  }
+}

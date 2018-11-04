@@ -1,0 +1,23 @@
+notifications:
+  email:
+    on_success: change
+    on_failure: always
+language: node_js
+node_js:
+- node
+install:
+- npm install
+script:
+- npm run build --production
+deploy:
+  region: us-west-2
+  bucket: todo-react.donpistole.com
+  provider: s3
+  access_key_id: AKIAJZ2ELUZSNWGJU27Q
+  secret_access_key:
+    secure: f1KCBk4tKr9ENqKJh1aexIipnDTFz/SwfqvGE/i2LJ74BDUjGdreNHW3y1QPmZVgu4OSe2c3Wp/SjULncfy5Y+tk0cwEqj/uwxuMpzgEvam/E/RvcJzDQv+iu1CC4tx2PF4AoLentQMOfSNhZLPaTIScwzD0AbDbv4Iw2ghHYn2puPU6PBd8QBNDbmGbVLNVONGUMda3UkkxGk6m6JrXZ2NSc7GHoK1Yqd+NqxTb+hl9Jevo5NBcYZ1ENyy3ktn0nMRQL7S6OZKuAEAte9b4idYXHBc+yGY1R0dCxH3q5H2LDHQSwuE+qjhp+HccgHJ0FrAgyctSgKJu8b1pODEd9+PdriaN5C2nYAALBABkXGoggDY6KaimOFq0XCZ3EaW83QrTl5Fg3frntytvlnpSmB3Q/0qVSAsMZg0Frijp5BNkW6gjVCXRs4z4Wz61pTlfR30sQHh5aevx9mr/DeszVt4mNcrQrJNkIxokvQEWhDQeC0YzwCSSRkTFQ1LsduZL39bwslAEl6CfGgVTiaDzDHhiLqYI6+xw/yqI5VSl8XrUwYXAsBd2DkN8hyoXhfwC9lbS5K+UVNTiNFBZ9y1Ob0YwMKYt0P/3vU1YEFczXNUyfRs95IRePlNaRZjr81oiBF684tkJAViehskmbr3bXpMNOUGHh/FJBKhq/Dm5OPU=
+  skip_cleanup: true
+  local-dir: build
+  acl: public_read
+  on:
+    repo: dpistole/todo_react
